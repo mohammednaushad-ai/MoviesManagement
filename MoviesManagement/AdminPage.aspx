@@ -3,4 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Button ID="Button1" runat="server" Text="Button" Width="177px" />
+    <br />
+    <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="True">
+    </asp:CheckBoxList>
 </asp:Content>
