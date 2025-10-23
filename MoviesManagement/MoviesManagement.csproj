@@ -105,6 +105,10 @@
     <Content Include="App_Data\MovieManagementDB_log.ldf">
       <DependentUpon>MovieManagementDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\MoviesDB.mdf" />
+    <Content Include="App_Data\MoviesDB_log.ldf">
+      <DependentUpon>MoviesDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
