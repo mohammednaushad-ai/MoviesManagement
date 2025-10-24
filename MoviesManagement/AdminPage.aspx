@@ -2,8 +2,54 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Button ID="Button1" runat="server" Text="Button" Width="177px" />
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MovieID" DataSourceID="SqlDataSource1" GridLines="Horizontal">
+        <AlternatingRowStyle BackColor="#F7F7F7" />
+        <Columns>
+            <asp:BoundField DataField="MovieID" HeaderText="MovieID" InsertVisible="False" ReadOnly="True" SortExpression="MovieID" />
+            <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
+            <asp:BoundField DataField="Genre" HeaderText="Genre" SortExpression="Genre" />
+            <asp:BoundField DataField="Director" HeaderText="Director" SortExpression="Director" />
+            <asp:BoundField DataField="Language" HeaderText="Language" SortExpression="Language" />
+            <asp:BoundField DataField="ReleaseYear" HeaderText="ReleaseYear" SortExpression="ReleaseYear" />
+            <asp:BoundField DataField="Rating" HeaderText="Rating" SortExpression="Rating" />
+            <asp:BoundField DataField="BoxOfficeCollection" HeaderText="BoxOfficeCollection" SortExpression="BoxOfficeCollection" />
+            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+        </Columns>
+        <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+        <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+        <SortedAscendingCellStyle BackColor="#F4F4FD" />
+        <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+        <SortedDescendingCellStyle BackColor="#D8D8F0" />
+        <SortedDescendingHeaderStyle BackColor="#3E3277" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WebFormMoviesDBConnectionString2 %>" DeleteCommand="DELETE FROM [Movies] WHERE [MovieID] = @MovieID" InsertCommand="INSERT INTO [Movies] ([Title], [Genre], [Director], [Language], [ReleaseYear], [Rating], [BoxOfficeCollection], [Description]) VALUES (@Title, @Genre, @Director, @Language, @ReleaseYear, @Rating, @BoxOfficeCollection, @Description)" SelectCommand="SELECT [MovieID], [Title], [Genre], [Director], [Language], [ReleaseYear], [Rating], [BoxOfficeCollection], [Description] FROM [Movies]" UpdateCommand="UPDATE [Movies] SET [Title] = @Title, [Genre] = @Genre, [Director] = @Director, [Language] = @Language, [ReleaseYear] = @ReleaseYear, [Rating] = @Rating, [BoxOfficeCollection] = @BoxOfficeCollection, [Description] = @Description WHERE [MovieID] = @MovieID">
+        <DeleteParameters>
+            <asp:Parameter Name="MovieID" Type="Int64" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="Title" Type="String" />
+            <asp:Parameter Name="Genre" Type="String" />
+            <asp:Parameter Name="Director" Type="String" />
+            <asp:Parameter Name="Language" Type="String" />
+            <asp:Parameter Name="ReleaseYear" Type="Int32" />
+            <asp:Parameter Name="Rating" Type="Decimal" />
+            <asp:Parameter Name="BoxOfficeCollection" Type="Decimal" />
+            <asp:Parameter Name="Description" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Title" Type="String" />
+            <asp:Parameter Name="Genre" Type="String" />
+            <asp:Parameter Name="Director" Type="String" />
+            <asp:Parameter Name="Language" Type="String" />
+            <asp:Parameter Name="ReleaseYear" Type="Int32" />
+            <asp:Parameter Name="Rating" Type="Decimal" />
+            <asp:Parameter Name="BoxOfficeCollection" Type="Decimal" />
+            <asp:Parameter Name="Description" Type="String" />
+            <asp:Parameter Name="MovieID" Type="Int64" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
     <br />
-    <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="True">
-    </asp:CheckBoxList>
-</asp:Content>
+    </asp:Content>
