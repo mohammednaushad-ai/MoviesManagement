@@ -13,5 +13,28 @@ namespace MoviesManagement
         {
 
         }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (MaleRadioButton.Checked || FemaleRadioButton.Checked)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+
+        }
     }
 }
