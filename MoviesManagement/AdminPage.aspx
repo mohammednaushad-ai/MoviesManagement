@@ -7,7 +7,10 @@
             margin-top:50px;
             border: 5px ridge black;
         }
-        .auto-style2 {}
+        .auto-style2 {
+            text-align:center;
+            font-size:large;
+        }
         .auto-style3 {
             width: 135px;
         }
@@ -138,10 +141,11 @@
             <asp:Parameter Name="MovieID" Type="Int64" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" BackColor="Silver" Font-Size="Large" ForeColor="Red" />
     <asp:Panel ID="Panel1" runat="server" Height="627px" Width="1321px">
         <table align="center" cellpadding="3" cellspacing="3" class="auto-style1">
             <tr>
-                <td class="auto-style2" colspan="2">INSERT MOVIES&nbsp;</td>
+                <td class="auto-style2" colspan="2">INSERT NEW MOVIE</td>
             </tr>
             <tr>
                 <td class="auto-style3">Movies Title</td>
@@ -176,6 +180,7 @@
                 <td class="auto-style4">
                     <asp:TextBox ID="YearTextBox" runat="server" Height="37px" TextMode="Number" Width="196px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="YearTextBox" Display="Dynamic" ErrorMessage="Please enter Movie Year" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                    <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="YearTextBox" Display="Dynamic" ErrorMessage="Release Year Should From Year 1950 to 2025" ForeColor="Red" MaximumValue="2025" MinimumValue="1950" SetFocusOnError="True" Type="Integer">*</asp:RangeValidator>
                 </td>
             </tr>
             <tr>
@@ -183,6 +188,7 @@
                 <td class="auto-style4">
                     <asp:TextBox ID="RatingTextBox" runat="server" Height="37px" TextMode="Number" Width="196px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="RatingTextBox" Display="Dynamic" ErrorMessage="Please enter Movie Rating" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                    <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="RatingTextBox" Display="Dynamic" ErrorMessage="Rating Should be from 0 to 10" ForeColor="Red" MaximumValue="10" MinimumValue="0" SetFocusOnError="True" Type="Integer">*</asp:RangeValidator>
                 </td>
             </tr>
             <tr>
@@ -190,6 +196,7 @@
                 <td class="auto-style4">
                     <asp:TextBox ID="BoxTextBox" runat="server" Height="37px" TextMode="Number" Width="196px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="BoxTextBox" Display="Dynamic" ErrorMessage="Please enter Movie Collection" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                    <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="BoxTextBox" Display="Dynamic" ErrorMessage="Box Office Collection Cannot be negative number" ForeColor="Red" MinimumValue="0" SetFocusOnError="True" Type="Integer" MaximumValue="2000">*</asp:RangeValidator>
                 </td>
             </tr>
             <tr>
