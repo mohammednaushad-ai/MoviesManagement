@@ -89,7 +89,6 @@
             <td>
                 <asp:TextBox ID="UserNameTextBox" runat="server" Height="40px" Width="221px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="UserNameTextBox" Display="Dynamic" ErrorMessage="Please Enter Your User Name" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="UserNameTextBox" ErrorMessage="Enter Valid Username" ForeColor="Red" SetFocusOnError="True" ValidationExpression="^[A-Za-z][A-Za-z0-9._-]*[A-Za-z0-9]$">*</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
