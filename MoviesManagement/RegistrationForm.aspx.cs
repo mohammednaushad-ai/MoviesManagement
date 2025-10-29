@@ -34,7 +34,7 @@ namespace MoviesManagement
 
         }
 
-<<<<<<< HEAD
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(cs);
@@ -42,7 +42,7 @@ namespace MoviesManagement
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@fname", FirstNameTextBox.Text);
             cmd.Parameters.AddWithValue("@lname", LastNameTextBox.Text);
-            if (MaleRadioButton.Checked )
+            if (MaleRadioButton.Checked)
             {
                 cmd.Parameters.AddWithValue("@gender", "Male");
             }
@@ -56,7 +56,7 @@ namespace MoviesManagement
             cmd.Parameters.AddWithValue("@age", AgeTextBox.Text);
             cmd.Parameters.AddWithValue("@username", UserNameTextBox.Text);
 
-            string encryptedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(PasswordTextBox.Text,"SHA1");
+            string encryptedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(PasswordTextBox.Text, "SHA1");
 
 
             cmd.Parameters.AddWithValue("@password", encryptedPassword);
@@ -71,7 +71,7 @@ namespace MoviesManagement
                 Response.Write("failed");
             }
             con.Close();
-=======
+        }
         protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
         {
             if (TermsCheckBox.Checked)
@@ -84,10 +84,6 @@ namespace MoviesManagement
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Write("Registration Successful");
->>>>>>> NivasMovie
-        }
+       
     }
 }
