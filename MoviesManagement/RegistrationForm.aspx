@@ -54,7 +54,7 @@
         <tr>
             <td class="auto-style2">E-mail</td>
             <td>
-                <asp:TextBox ID="EmailTextBox" runat="server" Height="40px" OnTextChanged="TextBox3_TextChanged" TextMode="Email" Width="221px"></asp:TextBox>
+                <asp:TextBox ID="EmailTextBox" runat="server" Height="40px" TextMode="Email" Width="221px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="EmailTextBox" Display="Dynamic" ErrorMessage="Please Enter Your Email" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="EmailTextBox" ErrorMessage="Enter Valid Email" ForeColor="Red" ValidationExpression="(?i)^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">*</asp:RegularExpressionValidator>
             </td>
