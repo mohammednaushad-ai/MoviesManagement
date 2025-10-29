@@ -36,5 +36,22 @@ namespace MoviesManagement
             }
 
         }
+
+        protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (TermsCheckBox.Checked)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write("Registration Successful");
+        }
     }
 }

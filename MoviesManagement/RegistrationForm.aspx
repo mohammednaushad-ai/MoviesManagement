@@ -20,7 +20,14 @@
         .auto-style5 {
             height: 46px;
         }
+        .auto-style6 {
+            height: 61px;
+        }
+        .auto-style7 {
+            height: 71px;
+        }
     </style>
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -70,10 +77,11 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style2">Phone Number</td>
-            <td>
-                <asp:TextBox ID="PhoneNumberTextBox" runat="server" Height="40px" TextMode="Number" Width="221px"></asp:TextBox>
+            <td class="auto-style6">Phone Number</td>
+            <td class="auto-style6">
+                <asp:TextBox ID="PhoneNumberTextBox" runat="server" Height="40px" TextMode="Phone" Width="221px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="PhoneNumberTextBox" Display="Dynamic" ErrorMessage="Please Enter Your Phone Number" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="PhoneNumberTextBox" Display="Dynamic" ErrorMessage="Enter valid number" ForeColor="Red" SetFocusOnError="True" ValidationExpression="^[0-9]{10}$">*</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -81,35 +89,40 @@
             <td>
                 <asp:TextBox ID="UserNameTextBox" runat="server" Height="40px" Width="221px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="UserNameTextBox" Display="Dynamic" ErrorMessage="Please Enter Your User Name" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="UserNameTextBox" ErrorMessage="Enter Valid Username" ForeColor="Red" SetFocusOnError="True" ValidationExpression="^[A-Za-z][A-Za-z0-9._-]*[A-Za-z0-9]$">*</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style2">Password</td>
             <td>
-                <asp:TextBox ID="PasswordTextBox" runat="server" Height="40px" TextMode="Password" Width="221px"></asp:TextBox>
+                <asp:TextBox ID="PasswordTextBox" runat="server" Height="40px" TextMode="Password" Width="221px" MaxLength="10" ToolTip="password should contain an upper case , an lowercase , number and a special character "></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="PasswordTextBox" Display="Dynamic" ErrorMessage="Please Enter a Password" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="PasswordTextBox" Display="Dynamic" ErrorMessage="The password should have atleast one 1 special character,number , lowercase and uppercase alphabet with max length of 8 to 10 characters" ForeColor="Red" SetFocusOnError="True" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,10}$">*</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style2">Confirm Password</td>
             <td>
                 <asp:TextBox ID="ConfirmTextBox" runat="server" Height="40px" TextMode="Password" Width="221px"></asp:TextBox>
+                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="PasswordTextBox" ControlToValidate="ConfirmTextBox" Display="Dynamic" ErrorMessage="Password Does not match" ForeColor="Red" SetFocusOnError="True">*</asp:CompareValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style2">Terms &amp; Conditions</td>
             <td>
                 <asp:CheckBox ID="TermsCheckBox" runat="server" Text="I agree the terms &amp; Conditions" />
+
+            &nbsp;<asp:CustomValidator ID="CustomValidator2" runat="server" Display="Dynamic" ErrorMessage="agree to terms and conditions" ForeColor="Red" OnServerValidate="CustomValidator2_ServerValidate" SetFocusOnError="True">*</asp:CustomValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style4"></td>
             <td class="auto-style5">
-                <asp:Button ID="Button1" runat="server" Height="37px" Text="Register" Width="190px" />
+                <asp:Button ID="Button1" runat="server" Height="37px" Text="Register" Width="190px" OnClick="Button1_Click" />
             </td>
         </tr>
         <tr>
-            <td class="auto-style2" colspan="2">
+            <td class="auto-style7" colspan="2">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" Font-Size="Large" ForeColor="Red" />
             </td>
         </tr>
