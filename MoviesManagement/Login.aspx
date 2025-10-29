@@ -23,7 +23,7 @@
         <tr>
             <td class="auto-style3">User Name</td>
             <td class="auto-style4">
-                <asp:TextBox ID="UserNameTextBox" runat="server" Height="39px" OnTextChanged="TextBox1_TextChanged" Width="213px"></asp:TextBox>
+                <asp:TextBox ID="UserNameTextBox" runat="server" Height="39px" Width="213px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserNameTextBox" Display="Dynamic" ErrorMessage="User Name is required" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -36,9 +36,9 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                &nbsp;</td>
+                </td>
             <td class="auto-style2">
-                <asp:Button ID="Button1" runat="server" Height="42px" OnClick="Button1_Click" Text="Login" Width="171px" /></td>
+                <asp:Button ID="Button1" runat="server" Height="42px"  Text="Login" Width="171px" OnClick="Button1_Click" /></td>
         </tr>
         <tr>
             <td class="auto-style3" colspan="2">
