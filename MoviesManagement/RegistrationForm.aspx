@@ -94,9 +94,9 @@
         <tr>
             <td class="auto-style2">Password</td>
             <td>
-                <asp:TextBox ID="PasswordTextBox" runat="server" Height="40px" TextMode="Password" Width="221px" MaxLength="10" ToolTip="password should contain an upper case , an lowercase , number and a special character "></asp:TextBox>
+                <asp:TextBox ID="PasswordTextBox" runat="server" Height="40px" Width="221px" MaxLength="10" ToolTip="password should contain an upper case , an lowercase , number and a special character "></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="PasswordTextBox" Display="Dynamic" ErrorMessage="Please Enter a Password" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="PasswordTextBox" Display="Dynamic" ErrorMessage="The password should have atleast one 1 special character,number , lowercase and uppercase alphabet with max length of 8 to 10 characters" ForeColor="Red" SetFocusOnError="True" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,10}$">*</asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="PasswordTextBox" Display="Dynamic" ErrorMessage="The password should have atleast one 1 special character,number , lowercase and uppercase alphabet with max length of 8 to 10 characters" ForeColor="Red" SetFocusOnError="True" ValidationExpression="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$">*</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
